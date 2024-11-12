@@ -1,5 +1,8 @@
 import random
 import math
+
+from pygame.cursors import sizer_x_strings
+
 import game_framework
 import game_world
 
@@ -30,7 +33,8 @@ class Zombie:
 
     def __init__(self):
         self.x, self.y = random.randint(1600-800, 1600), 150
-        self.size_x, self.size_y = 200, 200
+        self.size_x = 200
+        self.size_y = 200
         self.load_images()
         self.frame = random.randint(0, 9)
         self.dir = random.choice([-1,1])
@@ -59,10 +63,8 @@ class Zombie:
 
     def get_bb(self):
         # fill here
-        return self.x - 50, self.y - 70, self.x + 50, self.y + 100
+        return self.x - 50, self.y - 80, self.x + 50, self.y + 100
 
     def handle_collision(self, group, other):
         # fill here
-        if group == 'zombie:ball':
-            game_world.remove_object(self)
         pass

@@ -42,9 +42,10 @@ def init():
     # 충돌 대상들을 등록해주기
     add_collision_pair('boy:ball', boy, None)
     add_collision_pair('boy:zombie', boy, zombies)
+    add_collision_pair('zombie:ball', zombies, None)
     for ball in balls:
         add_collision_pair('boy:ball', None, ball)
-        add_collision_pair('zombie:ball', zombies, ball)
+        add_collision_pair('zombie:ball', None, ball)
 
 def finish():
     game_world.clear()
